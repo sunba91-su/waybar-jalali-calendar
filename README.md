@@ -1,6 +1,6 @@
 # waybar-jalaly-calendar
 
-**تقویم جلالی برای وی‌بار** — Jalali (Persian/Solar Hijri) calendar module for [Waybar](https://github.com/Alexays/Waybar).
+**Jalali (Persian/Solar Hijri) calendar module for [Waybar](https://github.com/Alexays/Waybar).**
 
 ![Preview](https://img.shields.io/badge/waybar-module-blue)
 ![Python](https://img.shields.io/badge/python-3.9%2B-green)
