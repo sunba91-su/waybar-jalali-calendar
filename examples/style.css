@@ -1,0 +1,17 @@
+/* Example CSS for waybar-jalaly-calendar */
+
+#custom-shamsi-date {
+    color: #eceff4;
+    font-weight: bold;
+    padding: 0 8px;
+    margin: 2px 0;
+    border-radius: 4px;
+}
+
+#custom-shamsi-date.holiday {
+    color: #bf616a;
+}
+
+#custom-shamsi-date.weekend {
+    color: #ebcb8b;
+}
