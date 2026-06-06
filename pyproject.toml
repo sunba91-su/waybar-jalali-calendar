@@ -4,7 +4,7 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "waybar-jalaly-calendar"
-version = "1.0.0"
+version = "1.2.0"
 description = "Jalali (Persian/Solar Hijri) calendar module for Waybar with holiday detection, Nowruz countdown, and monthly calendar grid"
 readme = "README.md"
 requires-python = ">=3.10"
