@@ -12,6 +12,16 @@ MONTHS_FA = [
     "مهر", "آبان", "آذر", "دی", "بهمن", "اسفند",
 ]
 
+WEEKDAYS_EN = [
+    "Shanbeh", "Yekshanbeh", "Doshanbeh", "Seshanbeh",
+    "Chaharshanbeh", "Panjshanbeh", "Jomeh",
+]
+
+MONTHS_EN = [
+    "Farvardin", "Ordibehesht", "Khordad", "Tir", "Mordad", "Shahrivar",
+    "Mehr", "Aban", "Azar", "Dey", "Bahman", "Esfand",
+]
+
 MONTHS_HIJRI_AR = [
     "محرم", "صفر", "ربیع\u200cالاول", "ربیع\u200cالثانی",
     "جمادی\u200cالاول", "جمادی\u200cالثانی", "رجب", "شعبان",

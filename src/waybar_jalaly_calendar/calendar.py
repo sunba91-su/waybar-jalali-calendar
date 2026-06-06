@@ -6,8 +6,10 @@ from hijridate import Gregorian as HijriGregorian
 
 from .holidays import days_to_nowruz, get_all_holidays
 from .persian_utils import (
+    MONTHS_EN,
     MONTHS_FA,
     MONTHS_HIJRI_AR,
+    WEEKDAYS_EN,
     WEEKDAYS_FA,
     is_iran_weekend,
     to_persian_digits,
@@ -72,8 +74,8 @@ def main() -> None:
         )
 
         holidays = get_all_holidays(j_today)
-        weekday_name = WEEKDAYS_FA[j_today.weekday()]
-        month_name = MONTHS_FA[j_today.month - 1]
+        weekday_name = WEEKDAYS_EN[j_today.weekday()]
+        month_name = MONTHS_EN[j_today.month - 1]
 
         css_class = ""
         if holidays:
@@ -82,11 +84,11 @@ def main() -> None:
             css_class = "weekend"
 
         icon = " " if css_class == "holiday" else ""
-        text = f"{icon} {to_persian_digits(f'{j_today.day} {month_name} {j_today.year}')}"
+        text = f"{icon} {j_today.year}/{month_name}/{j_today.day}"
 
         tooltip_lines = []
         tooltip_lines.append(
-            f"{weekday_name} {to_persian_digits(f'{j_today.day} {month_name} {j_today.year}')}"
+            f"{weekday_name} {j_today.year}/{month_name}/{j_today.day}"
         )
         if holidays:
             tooltip_lines.append(
