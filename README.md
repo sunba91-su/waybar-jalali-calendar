@@ -1,9 +1,9 @@
-# waybar-jalaly-calendar
+# waybar-jalali-calendar
 
 [![Test](https://github.com/sunba91-su/waybar-jalali-calendar/actions/workflows/test.yml/badge.svg)](https://github.com/sunba91-su/waybar-jalali-calendar/actions/workflows/test.yml)
-[![PyPI version](https://img.shields.io/pypi/v/waybar-jalaly-calendar)](https://pypi.org/project/waybar-jalaly-calendar/)
-[![Python versions](https://img.shields.io/pypi/pyversions/waybar-jalaly-calendar)](https://pypi.org/project/waybar-jalaly-calendar/)
-[![License](https://img.shields.io/pypi/l/waybar-jalaly-calendar)](https://github.com/sunba91-su/waybar-jalali-calendar/blob/main/LICENSE)
+[![PyPI version](https://img.shields.io/pypi/v/waybar-jalali-calendar)](https://pypi.org/project/waybar-jalali-calendar/)
+[![Python versions](https://img.shields.io/pypi/pyversions/waybar-jalali-calendar)](https://pypi.org/project/waybar-jalali-calendar/)
+[![License](https://img.shields.io/pypi/l/waybar-jalali-calendar)](https://github.com/sunba91-su/waybar-jalali-calendar/blob/main/LICENSE)
 [![Stars](https://img.shields.io/github/stars/sunba91-su/waybar-jalali-calendar?style=social)](https://github.com/sunba91-su/waybar-jalali-calendar)
 
 **Jalali (Persian/Solar Hijri) calendar module for [Waybar](https://github.com/Alexays/Waybar).**  
@@ -30,7 +30,7 @@ Works on **Sway**, **Hyprland**, and any Wayland compositor using Waybar.
 ## ⚡ Quick Start
 
 ```bash
-pip install waybar-jalaly-calendar
+pip install waybar-jalali-calendar
 ```
 
 Then add to your Waybar config (see [Configuration](#-waybar-configuration) below).
@@ -42,14 +42,14 @@ Then add to your Waybar config (see [Configuration](#-waybar-configuration) belo
 ### Using pip (recommended)
 
 ```bash
-pip install waybar-jalaly-calendar
+pip install waybar-jalali-calendar
 ```
 
 ### From source
 
 ```bash
 git clone https://github.com/sunba91-su/waybar-jalali-calendar.git
-cd waybar-jalaly-calendar
+cd waybar-jalali-calendar
 pip install .
 ```
 
@@ -57,7 +57,7 @@ pip install .
 
 ```bash
 git clone https://github.com/sunba91-su/waybar-jalali-calendar.git
-cd waybar-jalaly-calendar
+cd waybar-jalali-calendar
 pipx install .
 ```
 
@@ -84,14 +84,14 @@ make install-system  # system-wide
 
 ```json
 "custom/shamsi-date": {
-    "exec": "waybar-jalaly-calendar",
+    "exec": "waybar-jalali-calendar",
     "format": "{}",
     "interval": 3600,
     "return-type": "json",
     "signal": 1,
-    "on-click": "waybar-jalaly-calendar --reset && pkill -SIGRTMIN+1 waybar",
-    "on-scroll-up": "waybar-jalaly-calendar --next && pkill -SIGRTMIN+1 waybar",
-    "on-scroll-down": "waybar-jalaly-calendar --prev && pkill -SIGRTMIN+1 waybar"
+    "on-click": "waybar-jalali-calendar --reset && pkill -SIGRTMIN+1 waybar",
+    "on-scroll-up": "waybar-jalali-calendar --next && pkill -SIGRTMIN+1 waybar",
+    "on-scroll-down": "waybar-jalali-calendar --prev && pkill -SIGRTMIN+1 waybar"
 }
 ```
 </details>
@@ -139,10 +139,10 @@ Once installed and configured, the calendar appears in your Waybar:
 ### CLI Commands
 
 ```bash
-waybar-jalaly-calendar          # Output Waybar JSON (called by Waybar)
-waybar-jalaly-calendar --reset  # Reset to current month
-waybar-jalaly-calendar --next   # Show next month
-waybar-jalaly-calendar --prev   # Show previous month
+waybar-jalali-calendar          # Output Waybar JSON (called by Waybar)
+waybar-jalali-calendar --reset  # Reset to current month
+waybar-jalali-calendar --next   # Show next month
+waybar-jalali-calendar --prev   # Show previous month
 ```
 
 ---
@@ -177,7 +177,7 @@ waybar-jalaly-calendar --prev   # Show previous month
 
 ```bash
 git clone https://github.com/sunba91-su/waybar-jalali-calendar.git
-cd waybar-jalaly-calendar
+cd waybar-jalali-calendar
 pip install -e ".[test]"
 python -m pytest tests/ -v --cov
 ```
@@ -187,7 +187,7 @@ python -m pytest tests/ -v --cov
 ## 📝 Uninstall
 
 ```bash
-pip uninstall waybar-jalaly-calendar
+pip uninstall waybar-jalali-calendar
 rm -f ${XDG_RUNTIME_DIR:-/tmp}/waybar-jalaly-state  # clean up state file
 ```
 

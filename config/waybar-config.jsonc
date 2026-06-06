@@ -1,12 +1,12 @@
 {
   "custom/shamsi-date": {
-    "exec": "waybar-jalaly-calendar",
+    "exec": "waybar-jalali-calendar",
     "format": "{}",
     "interval": 3600,
     "return-type": "json",
     "signal": 1,
-    "on-click": "waybar-jalaly-calendar --reset && pkill -SIGRTMIN+1 waybar",
-    "on-scroll-up": "waybar-jalaly-calendar --next && pkill -SIGRTMIN+1 waybar",
-    "on-scroll-down": "waybar-jalaly-calendar --prev && pkill -SIGRTMIN+1 waybar"
+    "on-click": "waybar-jalali-calendar --reset && pkill -SIGRTMIN+1 waybar",
+    "on-scroll-up": "waybar-jalali-calendar --next && pkill -SIGRTMIN+1 waybar",
+    "on-scroll-down": "waybar-jalali-calendar --prev && pkill -SIGRTMIN+1 waybar"
   }
 }

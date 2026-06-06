@@ -1,12 +1,12 @@
 import jdatetime
 
-from waybar_jalaly_calendar.holidays import (
+from waybar_jalali_calendar.holidays import (
     days_to_nowruz,
     get_all_holidays,
     get_hijri_holidays,
     get_jalali_holidays,
 )
-from waybar_jalaly_calendar.persian_utils import (
+from waybar_jalali_calendar.persian_utils import (
     is_iran_weekend,
     to_persian_digits,
 )

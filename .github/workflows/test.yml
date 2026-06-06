@@ -28,4 +28,4 @@ jobs:
 
       - name: Run tests
         run: |
-          python -m pytest tests/ -v --cov=waybar_jalaly_calendar --cov-report=term-missing
+          python -m pytest tests/ -v --cov=waybar_jalali_calendar --cov-report=term-missing

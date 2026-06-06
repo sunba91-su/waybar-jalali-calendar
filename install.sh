@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-# install.sh — Automated installer for waybar-jalaly-calendar
+# install.sh — Automated installer for waybar-jalali-calendar
 set -euo pipefail
 
 RED='\033[0;31m'; GREEN='\033[0;32m'; YELLOW='\033[1;33m'; NC='\033[0m'
@@ -13,7 +13,7 @@ command -v pip3 &>/dev/null   || err "pip3 is required but not found."
 info "Python $(python3 --version)"
 info "pip $(pip3 --version | cut -d' ' -f2)"
 
-info "Installing waybar-jalaly-calendar..."
+info "Installing waybar-jalali-calendar..."
 pip3 install --user -e . 2>&1 | tail -1
 
 INSTALL_DIR="${HOME}/.local/bin"
@@ -23,14 +23,14 @@ if [[ ":$PATH:" != *":${INSTALL_DIR}:"* ]]; then
 fi
 
 info "Verifying..."
-if command -v waybar-jalaly-calendar &>/dev/null; then
-    info "waybar-jalaly-calendar installed successfully!"
-    output=$(waybar-jalaly-calendar 2>/dev/null || true)
+if command -v waybar-jalali-calendar &>/dev/null; then
+    info "waybar-jalali-calendar installed successfully!"
+    output=$(waybar-jalali-calendar 2>/dev/null || true)
     text=$(echo "$output" | python3 -c "import json,sys; d=json.load(sys.stdin); print(d.get('text',''))" 2>/dev/null || echo "N/A")
     echo "  Test output: $text"
 else
-    warn "waybar-jalaly-calendar not found in PATH after install."
-    warn "Try: python3 -m waybar_jalaly_calendar"
+    warn "waybar-jalali-calendar not found in PATH after install."
+    warn "Try: python3 -m waybar_jalali_calendar"
 fi
 
 echo ""
@@ -41,14 +41,14 @@ echo ""
 echo "  1. Add to ~/.config/waybar/config:"
 echo ""
 echo '     "custom/shamsi-date": {'
-echo '         "exec": "waybar-jalaly-calendar",'
+echo '         "exec": "waybar-jalali-calendar",'
 echo '         "format": "{}",'
 echo '         "interval": 3600,'
 echo '         "return-type": "json",'
 echo '         "signal": 1,'
-echo '         "on-click": "waybar-jalaly-calendar --reset && pkill -SIGRTMIN+1 waybar",'
-echo '         "on-scroll-up": "waybar-jalaly-calendar --next && pkill -SIGRTMIN+1 waybar",'
-echo '         "on-scroll-down": "waybar-jalaly-calendar --prev && pkill -SIGRTMIN+1 waybar"'
+echo '         "on-click": "waybar-jalali-calendar --reset && pkill -SIGRTMIN+1 waybar",'
+echo '         "on-scroll-up": "waybar-jalali-calendar --next && pkill -SIGRTMIN+1 waybar",'
+echo '         "on-scroll-down": "waybar-jalali-calendar --prev && pkill -SIGRTMIN+1 waybar"'
 echo '     },'
 echo ""
 echo "  2. Add to ~/.config/waybar/style.css:"

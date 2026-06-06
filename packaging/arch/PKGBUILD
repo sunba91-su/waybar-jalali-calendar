@@ -1,7 +1,7 @@
 # Maintainer: Your Name <your-email@example.com>
 # Contributor: sunba91-su
 
-pkgname=waybar-jalaly-calendar
+pkgname=waybar-jalali-calendar
 pkgver=1.0.0
 pkgrel=1
 pkgdesc="Jalali (Persian/Solar Hijri) calendar module for Waybar with holiday detection, Nowruz countdown, and monthly calendar grid"

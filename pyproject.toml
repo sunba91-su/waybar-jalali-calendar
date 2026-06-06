@@ -3,8 +3,8 @@ requires = ["setuptools>=64"]
 build-backend = "setuptools.build_meta"
 
 [project]
-name = "waybar-jalaly-calendar"
-version = "1.2.0"
+name = "waybar-jalali-calendar"
+version = "1.2.1"
 description = "Jalali (Persian/Solar Hijri) calendar module for Waybar with holiday detection, Nowruz countdown, and monthly calendar grid"
 readme = "README.md"
 requires-python = ">=3.10"
@@ -34,7 +34,7 @@ Documentation = "https://github.com/sunba91-su/waybar-jalali-calendar#readme"
 Changelog = "https://github.com/sunba91-su/waybar-jalali-calendar/releases"
 
 [project.scripts]
-waybar-jalaly-calendar = "waybar_jalaly_calendar.__main__:main"
+waybar-jalali-calendar = "waybar_jalali_calendar.__main__:main"
 
 [tool.setuptools.packages.find]
 where = ["src"]

@@ -4,21 +4,21 @@ PREFIX ?= /usr/local
 INSTALL_DIR ?= $(HOME)/.local/bin
 
 install-user:
-	@echo "Installing waybar-jalaly-calendar for current user..."
+	@echo "Installing waybar-jalali-calendar for current user..."
 	pip install --user -e .
 	@echo ""
 	@echo "Done! Make sure $(INSTALL_DIR) is in your PATH."
 	@echo "Then add 'custom/shamsi-date' to your Waybar config (see config/)."
 
 install-system:
-	@echo "Installing waybar-jalaly-calendar system-wide..."
+	@echo "Installing waybar-jalali-calendar system-wide..."
 	sudo pip install -e .
 	@echo "Done!"
 
 install: install-user
 
 uninstall:
-	pip uninstall waybar-jalaly-calendar -y
+	pip uninstall waybar-jalali-calendar -y
 	rm -f /tmp/waybar-jalaly-state
 	rm -f $${XDG_RUNTIME_DIR:-/tmp}/waybar-jalaly-state
 	@echo "Uninstalled."

@@ -139,4 +139,4 @@ def main() -> None:
     except Exception as e:
         fallback = {"text": " --", "tooltip": f"Error: {e}"}
         print(json.dumps(fallback))
-        sys.stderr.write(f"waybar-jalaly-calendar: {e}\n")
+        sys.stderr.write(f"waybar-jalali-calendar: {e}\n")
