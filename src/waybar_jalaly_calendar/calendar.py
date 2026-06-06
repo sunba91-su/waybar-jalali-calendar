@@ -1,4 +1,5 @@
 import json
+import os
 import sys
 
 import jdatetime
@@ -15,7 +16,7 @@ from .persian_utils import (
     to_persian_digits,
 )
 
-STATE_FILE = "/tmp/waybar-jalaly-state"
+STATE_FILE = os.environ.get("XDG_RUNTIME_DIR", "/tmp") + "/waybar-jalaly-state"
 HEADER_WEEKDAYS = "ش   ی   د   س   چ   پ   ج"
 
 

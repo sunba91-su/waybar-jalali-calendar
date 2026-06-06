@@ -20,6 +20,7 @@ install: install-user
 uninstall:
 	pip uninstall waybar-jalaly-calendar -y
 	rm -f /tmp/waybar-jalaly-state
+	rm -f $${XDG_RUNTIME_DIR:-/tmp}/waybar-jalaly-state
 	@echo "Uninstalled."
 
 dev:

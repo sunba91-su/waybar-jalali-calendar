@@ -5,22 +5,34 @@ build-backend = "setuptools.build_meta"
 [project]
 name = "waybar-jalaly-calendar"
 version = "1.0.0"
-description = "Jalali (Persian/Solar Hijri) calendar module for Waybar"
+description = "Jalali (Persian/Solar Hijri) calendar module for Waybar with holiday detection, Nowruz countdown, and monthly calendar grid"
 readme = "README.md"
 requires-python = ">=3.9"
-license = { text = "GPL-3.0-or-later" }
-keywords = ["waybar", "sway", "persian-calendar", "jalali", "hijri"]
+license = "GPL-3.0-or-later"
+keywords = [
+    "waybar", "sway", "hyprland", "persian-calendar", "jalali",
+    "shamsi", "hijri", "farsi", "wayland", "linux", "iran-holidays",
+]
 classifiers = [
     "Programming Language :: Python :: 3",
-    "License :: OSI Approved :: GNU General Public License v3 or later (GPLv3+)",
+    "Programming Language :: Python :: 3.9",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Programming Language :: Python :: 3.13",
     "Operating System :: POSIX :: Linux",
     "Topic :: Desktop Environment :: Window Managers",
+    "Environment :: X11 Applications",
+    "Intended Audience :: End Users/Desktop",
 ]
 dependencies = ["jdatetime>=3.8", "hijridate>=1.0"]
 
 [project.urls]
-Homepage = "https://github.com/sunba91-su/waybar-jalaly-calendar"
-Repository = "https://github.com/sunba91-su/waybar-jalaly-calendar"
+Homepage = "https://github.com/sunba91-su/waybar-jalali-calendar"
+Repository = "https://github.com/sunba91-su/waybar-jalali-calendar"
+Documentation = "https://github.com/sunba91-su/waybar-jalali-calendar#readme"
+"Bug Tracker" = "https://github.com/sunba91-su/waybar-jalali-calendar/issues"
+Changelog = "https://github.com/sunba91-su/waybar-jalali-calendar/releases"
 
 [project.scripts]
 waybar-jalaly-calendar = "waybar_jalaly_calendar.__main__:main"
@@ -29,4 +41,4 @@ waybar-jalaly-calendar = "waybar_jalaly_calendar.__main__:main"
 where = ["src"]
 
 [project.optional-dependencies]
-test = ["pytest>=7"]
+test = ["pytest>=7", "pytest-cov>=4"]

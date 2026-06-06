@@ -1,64 +1,86 @@
 # waybar-jalaly-calendar
 
-**Jalali (Persian/Solar Hijri) calendar module for [Waybar](https://github.com/Alexays/Waybar).**
+[![Test](https://github.com/sunba91-su/waybar-jalali-calendar/actions/workflows/test.yml/badge.svg)](https://github.com/sunba91-su/waybar-jalali-calendar/actions/workflows/test.yml)
+[![PyPI version](https://img.shields.io/pypi/v/waybar-jalaly-calendar)](https://pypi.org/project/waybar-jalaly-calendar/)
+[![Python versions](https://img.shields.io/pypi/pyversions/waybar-jalaly-calendar)](https://pypi.org/project/waybar-jalaly-calendar/)
+[![License](https://img.shields.io/pypi/l/waybar-jalaly-calendar)](https://github.com/sunba91-su/waybar-jalali-calendar/blob/main/LICENSE)
+[![Stars](https://img.shields.io/github/stars/sunba91-su/waybar-jalali-calendar?style=social)](https://github.com/sunba91-su/waybar-jalali-calendar)
 
-![Preview](https://img.shields.io/badge/waybar-module-blue)
-![Python](https://img.shields.io/badge/python-3.9%2B-green)
-![License](https://img.shields.io/badge/license-GPLv3-blue)
+**Jalali (Persian/Solar Hijri) calendar module for [Waybar](https://github.com/Alexays/Waybar).**  
+Works on **Sway**, **Hyprland**, and any Wayland compositor using Waybar.
 
-## Features
+![screenshot](screenshots/preview.png)
+
+---
+
+## ✨ Features
 
 - **Jalali date** in the bar with full Persian text (e.g., `۱۶ خرداد ۱۴۰۵`)
-- **Calendar grid** in tooltip showing the full month
+- **Calendar grid** in tooltip showing the full month with today highlighted
 - **Holiday detection** — both fixed Jalali holidays (Nowruz, 22 Bahman, etc.) and movable Hijri holidays (Ashura, Ramadan, Eid)
-- **Nowruz countdown** — shows days remaining until the new year
+- **Nowruz countdown** — shows days remaining until the Persian New Year
 - **Year-end countdown** — remaining days in the current year
 - **Gregorian & Hijri dates** in tooltip
-- **Click navigation** — scroll through months in the tooltip
+- **Click navigation** — scroll through months in the tooltip via scroll wheel; click to reset
 - **Weekend styling** — Friday (جمعه) gets a special CSS class
 - **Persian numerals** — numbers displayed in Arabic-Indic digits (۰-۹)
 
-## Requirements
+---
 
-- Python 3.9+
-- [jdatetime](https://pypi.org/project/jdatetime/) — Jalali date library
-- [hijridate](https://pypi.org/project/hijridate/) — Hijri date conversion
-
-## Installation
-
-### Quick install (recommended)
+## ⚡ Quick Start
 
 ```bash
-git clone https://github.com/sunba91-su/waybar-jalaly-calendar.git
-cd waybar-jalaly-calendar
-./install.sh
+pip install waybar-jalaly-calendar
 ```
 
-### Using pip
+Then add to your Waybar config (see [Configuration](#-waybar-configuration) below).
+
+---
+
+## 📦 Installation Options
+
+### Using pip (recommended)
 
 ```bash
-git clone https://github.com/sunba91-su/waybar-jalaly-calendar.git
+pip install waybar-jalaly-calendar
+```
+
+### From source
+
+```bash
+git clone https://github.com/sunba91-su/waybar-jalali-calendar.git
 cd waybar-jalaly-calendar
-pip install --user .
+pip install .
 ```
 
 ### Using pipx (isolated)
 
 ```bash
+git clone https://github.com/sunba91-su/waybar-jalali-calendar.git
+cd waybar-jalaly-calendar
 pipx install .
 ```
 
 ### Using Makefile
 
 ```bash
-make install     # user install
+make install       # user install
 # or
 make install-system  # system-wide
 ```
 
-## Waybar Configuration
+### Arch Linux (AUR)
 
-Add to your `~/.config/waybar/config`:
+```bash
+# Coming soon — or build from dist/arch/PKGBUILD
+```
+
+---
+
+## 🎨 Waybar Configuration
+
+<details>
+<summary><b>config (~/.config/waybar/config)</b></summary>
 
 ```json
 "custom/shamsi-date": {
@@ -72,13 +94,17 @@ Add to your `~/.config/waybar/config`:
     "on-scroll-down": "waybar-jalaly-calendar --prev && pkill -SIGRTMIN+1 waybar"
 }
 ```
+</details>
 
-Add to your `~/.config/waybar/style.css`:
+<details>
+<summary><b>style (~/.config/waybar/style.css)</b></summary>
 
 ```css
 #custom-shamsi-date {
     font-weight: bold;
     padding: 0 8px;
+    margin: 2px 0;
+    border-radius: 4px;
 }
 
 #custom-shamsi-date.holiday {
@@ -86,11 +112,12 @@ Add to your `~/.config/waybar/style.css`:
 }
 
 #custom-shamsi-date.weekend {
-    color: #ebcb8b; /* yellow for Friday */
+    color: #ebcb8b; /* yellow for Friday (Jomeh) */
 }
 ```
+</details>
 
-Then restart Waybar:
+Restart Waybar:
 
 ```bash
 pkill waybar && waybar &
@@ -98,11 +125,13 @@ pkill waybar && waybar &
 pkill -SIGRTMIN+1 waybar
 ```
 
-## Usage
+---
+
+## 🕹 Usage
 
 Once installed and configured, the calendar appears in your Waybar:
 
-- **Bar text**: ` ۱۶ خرداد ۱۴۰۵` (current date with Persian digits)
+- **Bar text**: ` ۱۶ خرداد ۱۴۰۵` (current date with Persian digits) — shows a `🎉` icon on holidays
 - **Tooltip** (hover): Full date info, Hijri date, Nowruz countdown, and a monthly calendar grid with today highlighted
 - **Scroll up/down**: Navigate through months in the tooltip
 - **Click**: Reset back to the current month
@@ -110,32 +139,15 @@ Once installed and configured, the calendar appears in your Waybar:
 ### CLI Commands
 
 ```bash
-waybar-jalaly-calendar       # Output Waybar JSON (called by Waybar)
+waybar-jalaly-calendar          # Output Waybar JSON (called by Waybar)
 waybar-jalaly-calendar --reset  # Reset to current month
-waybar-jalaly-calendar --next  # Show next month
-waybar-jalaly-calendar --prev  # Show previous month
+waybar-jalaly-calendar --next   # Show next month
+waybar-jalaly-calendar --prev   # Show previous month
 ```
 
-## Development
+---
 
-```bash
-git clone https://github.com/sunba91-su/waybar-jalaly-calendar.git
-cd waybar-jalaly-calendar
-pip install -e ".[test]"
-python -m pytest tests/ -v
-```
-
-## Uninstall
-
-```bash
-make uninstall
-# or
-pip uninstall waybar-jalaly-calendar
-```
-
-## Holiday Categories
-
-The module detects two categories of holidays:
+## 📅 Holiday Coverage
 
 ### Fixed Jalali Holidays
 - Nowruz (1–4 Farvardin)
@@ -159,6 +171,28 @@ The module detects two categories of holidays:
 - Eid al-Adha (10 Dhu al-Hijjah)
 - Eid al-Ghadir (18 Dhu al-Hijjah)
 
-## License
+---
+
+## 🛠 Development
+
+```bash
+git clone https://github.com/sunba91-su/waybar-jalali-calendar.git
+cd waybar-jalaly-calendar
+pip install -e ".[test]"
+python -m pytest tests/ -v --cov
+```
+
+---
+
+## 📝 Uninstall
+
+```bash
+pip uninstall waybar-jalaly-calendar
+rm -f ${XDG_RUNTIME_DIR:-/tmp}/waybar-jalaly-state  # clean up state file
+```
+
+---
+
+## 📄 License
 
 GNU General Public License v3.0 or later. See [LICENSE](LICENSE).
