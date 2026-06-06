@@ -46,6 +46,8 @@ def handle_cli():
     with open(STATE_FILE, "w") as f:
         json.dump({"offset": offset}, f)
 
+    calendar_main()
+
 
 def main():
     handle_cli()
